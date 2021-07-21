@@ -8,7 +8,7 @@ const initialState = {
 export const memoSlice = createSlice({
   name: 'memo',
   initialState,
-  reducer: {
+  reducers: {
     getMemoListAsync: () => {},
     getMemoAsync: (state, action) => {},
     addMemoAsync: (state, action) => {},
