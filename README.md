@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Simple Memo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
 
-## Available Scripts
+## Page Requirements
 
-In the project directory, you can run:
+### 메모 목록 화면
 
-### `yarn start`
+- [ ] 메모 목록에 번호/제목/태그 표시*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ ] 메모 생성 버튼. 버튼 클릭 시 메모 만들기 기능을 실행할 수 있는 에디터 화면으로 이동*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [ ] 해당 목록에 있는 메모 중 하나 클릭 시 메모 상세 보여주기 화면으로 이동*
 
-### `yarn test`
+- [ ] 메모에 있는 모든 태그를 나열하는 태그 바 표시
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ ] 메모 검색 바, 검색 바에 키워드 입력시, 메모의 제목이 키워드를 포함하는 메모를 필터링하여 표시
 
-### `yarn build`
+- [ ] 태그 클릭 시 해당 태그의 메모들만 필터링하여 표시
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ ] 페이지네이션을 위한 컴포넌트와 페이징 기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 메모 상세 화면
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ ] 개별 메모의 번호/제목/태그/내용 표시*
 
-### `yarn eject`
+- [ ] 수정 버튼. 버튼 클릭 시 메모 수정 기능을 실행할 수 있는 에디터 화면으로 이동*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ ] 삭제 버튼. 버튼 클릭 시 메모 수정 기능을 실행할 수 있는 에디터 화면으로 이동*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 에디터 화면
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [ ] 메모의 제목/태그/내용 수정 가능*
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ ] 취소 버튼. 버튼 클릭 시 이전 화면으로 돌아가기*
 
-## Learn More
+- [ ] 확인 버튼. 버튼 클릭시 화면에 들어올 때 요청했던 메모 만들기/수정하기/삭제하기 중 하나의 동작을 수행*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [ ] WYSIWYG 에디터 적용
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*표시는 필수 구현 기능
