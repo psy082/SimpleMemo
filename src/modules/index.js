@@ -8,7 +8,7 @@ const combineReducer = combineReducers({
 });
 
 export const rootReducer = (state, action) => {
-  return combineReducer;
+  return combineReducer(state, action);
 };
 
 export function* rootSaga() {
