@@ -1,13 +1,17 @@
+import { memoController } from '../mockBack/Controller';
+
 const memoAPI = {
-  getMemoList: () => ({ data: [], error: null }),
+  getMemoList: async param => await memoController.getList(param),
 
-  getMemo: id => ({ data: {}, error: null }),
+  getAllTags: async () => await memoController.getAllTags(),
 
-  addMemo: id => ({ data: {}, error: null }),
+  getMemo: async id => await memoController.get(id),
 
-  updateMemo: id => ({ data: {}, error: null }),
+  addMemo: async (title, tags, text) => await memoController.add(title, tags, text),
 
-  deleteMemo: id => ({ data: {}, error: null }),
+  updateMemo: async (id, title, tags,  text) => await memoController.update(id, title, tags, text),
+
+  deleteMemo: async id => await memoController.delete(id),
 };
 
 export default memoAPI;

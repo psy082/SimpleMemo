@@ -23,6 +23,16 @@ export const memoService = {
     });
   },
 
+  getAllTags: () => {
+    let memoList = localStorage.getItem(MEMO_LIST);
+    memoList = memoList ? JSON.parse(memoList) : [];
+
+    let allTags = [...memoList.reduce((acc, { tags }) => acc.add(...tags), new Set())];
+    return new Promise((resolve, _) => {
+      resolve({ data: allTags, error: '' });
+    });
+  },
+
   getMemo: memoId => {
     const memoList = JSON.parse(localStorage.getItem(MEMO_LIST));
 
