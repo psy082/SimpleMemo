@@ -2,8 +2,11 @@ import { all } from '@redux-saga/core/effects';
 import { combineReducers } from 'redux';
 import memoReducer from './memo/memoReducer';
 import { memoSaga } from './memo/memoSaga';
+import memoListReducer from './memoList/memoListReducer';
+import { memoListSaga } from './memoList/memoListSaga';
 
 const combineReducer = combineReducers({
+  memoList: memoListReducer,
   memo: memoReducer,
 });
 
@@ -12,5 +15,5 @@ export const rootReducer = (state, action) => {
 };
 
 export function* rootSaga() {
-  yield all([memoSaga()]);
+  yield all([memoListSaga(), memoSaga()]);
 }

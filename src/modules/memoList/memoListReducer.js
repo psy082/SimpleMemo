@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const memoListSlice = createSlice({
-  name: 'memo',
+  name: 'memoList',
   initialState,
   reducers: {
     getMemoListAsync: () => {},
