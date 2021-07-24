@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  memoList: [],
+  memo : {
+    id: 0,
+    title: '',
+    tag: [],
+    text: ''
+  },
   error: '',
 };
 
@@ -9,7 +14,6 @@ export const memoSlice = createSlice({
   name: 'memo',
   initialState,
   reducers: {
-    getMemoListAsync: () => {},
     getMemoAsync: (state, action) => {},
     addMemoAsync: (state, action) => {},
     updateMemoAsync: (state, action) => {},
