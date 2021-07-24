@@ -15,6 +15,8 @@ export const memoController = {
     return memoService.getMemoList(searchKeyword, tagKeywords);
   },
 
+  getAllTags: () => memoService.getAllTags(),
+
   get: id => memoService.getMemo(id),
 
   add: (title, tags, text) => memoService.addMemo(title, tags, text),

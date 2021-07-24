@@ -11,7 +11,7 @@ import {
 import { call, takeLatest, put, select } from 'redux-saga/effects';
 import memoAPI from '../../api/memo';
 
-export const selectMemo = state => state.memo.memo;
+export const selectMemo = state => state.memo.memoList;
 
 export function* getMemoSaga() {}
 
