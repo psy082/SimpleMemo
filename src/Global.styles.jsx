@@ -7,12 +7,13 @@ const globalStyles = css`
   ul,
   ol {
     list-style: none;
+    margin: 0;
   }
 
   a {
     text-decoration: none;
 
-    $:visited &:hover,
+    &:visited &:hover,
     &:active {
       text-decoration: none;
     }
@@ -30,14 +31,18 @@ const globalStyles = css`
     cursor: pointer;
   }
 
-  * {
-    box-sizing: border-box;
-    font: inherit;
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+    background-color: #f5f5f5;
   }
 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
+  th {
+    font-weight: 200;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 `;
 

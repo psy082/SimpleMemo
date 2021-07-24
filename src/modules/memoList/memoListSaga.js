@@ -1,20 +1,25 @@
-import {
-  getMemoListAsync,
-  getAllTagsAsync,
-  error,
-  resetError,
-  pending,
-} from './memoListReducer';
-import { call, takeLatest, put, select } from 'redux-saga/effects';
+import { setMemoList, setAllTags, getMemoListAsync, getAllTagsAsync, pending } from './memoListReducer';
+import { call, takeLatest, put } from 'redux-saga/effects';
 import memoAPI from '../../api/memo';
 
 export const selectMemoList = state => state.memoList.memoList;
 
-export function* getMemoListSaga() {}
+export function* getMemoListSaga() {
+  yield put(pending());
 
-export function* getAllTagsSaga() {}
+  const response = yield call(memoAPI.getMemoList);
+  yield put(setMemoList(response.data));
+}
+
+export function* getAllTagsSaga() {
+  yield put(pending());
+
+  const response = yield call(memoAPI.getAllTags);
+  
+  yield put(setAllTags(response.data));
+}
 
 export function* memoListSaga() {
   yield takeLatest(getMemoListAsync.type, getMemoListSaga);
-  yield takeLatest(getAllTagsAsync.type, getMemoListSaga);
+  yield takeLatest(getAllTagsAsync.type, getAllTagsSaga);
 }

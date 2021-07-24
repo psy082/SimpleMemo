@@ -10,6 +10,12 @@ export const memoListSlice = createSlice({
   name: 'memoList',
   initialState,
   reducers: {
+    setMemoList: (state, action) => {
+      state.memoList = action.payload;
+    },
+    setAllTags: (state, action) => {
+      state.allTags = action.payload;
+    },
     getMemoListAsync: () => {},
     getAllTagsAsync: () => {},
     error: (state, action) => {
@@ -24,12 +30,7 @@ export const memoListSlice = createSlice({
   },
 });
 
-export const {
-  getMemoListAsync,
-  getAllTagsAsync,
-  error,
-  resetError,
-  pending,
-} = memoListSlice.actions;
+export const { setMemoList, setAllTags, getMemoListAsync, getAllTagsAsync, error, resetError, pending } =
+  memoListSlice.actions;
 
 export default memoListSlice.reducer;
