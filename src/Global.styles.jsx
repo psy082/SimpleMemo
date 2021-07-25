@@ -44,6 +44,10 @@ const globalStyles = css`
   * {
     box-sizing: border-box;
   }
+
+  .ck-editor__editable {
+    min-height: 150px;
+  }
 `;
 
 const GlobalStyles = () => {
