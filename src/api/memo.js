@@ -7,9 +7,9 @@ const memoAPI = {
 
   getMemo: async id => await memoController.get(id),
 
-  addMemo: async (title, tags, text) => await memoController.add(title, tags, text),
+  addMemo: async ({ title, tags, text }) => await memoController.add(title, tags, text),
 
-  updateMemo: async (id, title, tags,  text) => await memoController.update(id, title, tags, text),
+  updateMemo: async ({ id, title, tags, text }) => await memoController.update(id, title, tags, text),
 
   deleteMemo: async id => await memoController.delete(id),
 };
