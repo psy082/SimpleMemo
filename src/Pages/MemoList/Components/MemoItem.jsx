@@ -1,6 +1,6 @@
 import * as S from './MemoItem.styles';
 import { useHistory } from 'react-router-dom';
-import TagBadgeBar from './TagBadgeBar';
+import { TagBadgeBar } from '../../../Common/Components';
 
 const MemoItem = ({ id, title, tags }) => {
   const history = useHistory();
