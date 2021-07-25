@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const BadgeComponent = styled.li`
   margin: 0 2px;
   text-align: center;
-  width: 60px;
+  padding: 0px 10px;
   font-size: 15px;
   line-height: 1.6em;
 

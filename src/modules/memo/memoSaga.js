@@ -1,6 +1,5 @@
 import {
   setMemo,
-  getMemoListAsync,
   getMemoAsync,
   addMemoAsync,
   updateMemoAsync,
@@ -34,31 +33,31 @@ export function* addMemoSaga(action) {
     return;
   }
 
-  yield put(setMemo(response.data));
+  // yield put(setMemo(response.data));
 }
 
 export function* updateMemoSaga(action) {
   yield put(pending());
-  const response = yield call(memoAPI.update, action.payload);
+  const response = yield call(memoAPI.updateMemo, action.payload);
 
   if(response.error) {
     yield put(error(response.error));
     return;
   }
 
-  yield put(setMemo(response.data));
+  // yield put(setMemo(response.data));
 }
 
 export function* deleteMemoSaga(action) {
   yield put(pending());
-  const response = yield call(memoAPI.update, action.payload);
+  const response = yield call(memoAPI.deleteMemo, action.payload);
 
   if(response.error) {
     yield put(error(response.error));
     return;
   }
 
-  yield put(setMemo(response.data));
+  // yield put(setMemo(response.data));
 }
 
 export function* memoSaga() {

@@ -4,6 +4,7 @@ import TagBadge from './TagBadge';
 
 const TagBadgeBar = ({ tags }) => {
   const { selectedTags, onClick } = useTags();
+
   return (
     <S.BadgeBarComponent>
       {tags.map(tagName => (
