@@ -4,7 +4,7 @@ const initialState = {
   memo : {
     id: 0,
     title: '',
-    tag: [],
+    tags: [],
     text: ''
   },
   error: '',
@@ -14,6 +14,9 @@ export const memoSlice = createSlice({
   name: 'memo',
   initialState,
   reducers: {
+    setMemo: (state, action) => {
+      state.memo = action.payload;
+    },
     getMemoAsync: (state, action) => {},
     addMemoAsync: (state, action) => {},
     updateMemoAsync: (state, action) => {},
@@ -31,6 +34,7 @@ export const memoSlice = createSlice({
 });
 
 export const {
+  setMemo,
   getMemoListAsync,
   getMemoAsync,
   addMemoAsync,

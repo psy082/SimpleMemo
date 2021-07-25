@@ -1,6 +1,8 @@
 import * as S from './MemoList.styles';
 import { useMemoList } from './hooks';
-import { MemoItem, TagBadgeBar } from './Components';
+import { TagBadgeBar } from '../../Common/Components';
+import { MemoItem } from './Components';
+
 import plusSVG from '../../assets/svg/plus.svg';
 
 const tableHeads = [
@@ -15,7 +17,7 @@ const MemoList = () => {
   return (
     <S.Container>
       <S.AppTitle>Simple Memo</S.AppTitle>
-      <S.ButtonWrapper to='/editor/new'>
+      <S.ButtonWrapper to='/new'>
         <S.AddButton src={plusSVG} />
       </S.ButtonWrapper>
       <TagBadgeBar tags={allTags} />

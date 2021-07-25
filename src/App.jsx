@@ -10,7 +10,7 @@ function App() {
       <S.Container>
         <Route exact path={['/', '/list']} component={MemoList} />
         <Route exact path='/memo/:id' component={MemoDetail} />
-        <Route exact path={['/editor/new', '/editor/:id']} component={MemoEditor} />
+        <Route exact path={['/new', '/edit/:id', '/delete/:id']} component={MemoEditor} />
       </S.Container>
     </Switch>
   );
