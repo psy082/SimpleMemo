@@ -64,17 +64,18 @@ export const memoService = {
       newId = memoList[0].id + 1;
     }
 
-    memoList.unshift({
+    let newMemo = {
       id: newId,
       title,
       tags,
       text,
-    });
+    };
+    memoList.unshift(newMemo);
 
     localStorage.setItem(MEMO_LIST, JSON.stringify(memoList));
 
     return new Promise((resolve, _) => {
-      resolve({ data: memoList, error: '' });
+      resolve({ data: newMemo, error: '' });
     });
   },
 
@@ -90,7 +91,7 @@ export const memoService = {
       memo.tags = tags;
       memo.text = text;
 
-      response = { data: memoList, error: '' };
+      response = { data: memo, error: '' };
 
       localStorage.setItem(MEMO_LIST, JSON.stringify(memoList));
     } else {
@@ -110,7 +111,7 @@ export const memoService = {
     if (memoIdx > -1) {
       memoList.splice(memoIdx, 1);
 
-      response = { data: memoList, error: '' };
+      response = { data: `success deleting memo with id: ${memoId}`, error: '' };
 
       localStorage.setItem(MEMO_LIST, JSON.stringify(memoList));
     } else {

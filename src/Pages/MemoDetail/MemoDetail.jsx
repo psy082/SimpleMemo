@@ -1,11 +1,13 @@
 import * as S from './MemoDetail.styles';
 import { useHistory } from 'react-router';
 import { useMemoDetail } from './hooks';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { TagBadgeBar, ActionButton } from '../../Common/Components';
 
 import { backSVG, editSVG, deleteSVG } from '../../assets/svg';
 
-const memoContents = ['id', 'title', 'tags', 'text'];
+const rowNames = ['id', 'title', 'tags', 'text'];
 
 const MemoDetail = () => {
   const { memo, id } = useMemoDetail();
@@ -29,22 +31,29 @@ const MemoDetail = () => {
         <S.Backward src={backSVG} onClick={toList} />
       </S.HeadWrapper>
       <S.Memo>
-        <S.MemoBody>
-          {memoContents.map(contentName => (
-            <S.MemoRow key={`row${contentName}`}>
-              <S.MemoHead>{contentName.toUpperCase()}</S.MemoHead>
-              <S.MemoData>
-                {'tags' === contentName ? <TagBadgeBar tags={memo[contentName]} /> : memo[contentName]}
-              </S.MemoData>
-            </S.MemoRow>
-          ))}
-        </S.MemoBody>
+        <S.MemoBody>{rowNames.map(rowName => getRowComponent(memo, rowName))}</S.MemoBody>
       </S.Memo>
       <S.FootWrapper>
-        <ActionButton src={editSVG} onClick={() => editMemo(id)} />
         <ActionButton src={deleteSVG} onClick={() => deleteMemo(id)} />
+        <ActionButton src={editSVG} onClick={() => editMemo(id)} />
       </S.FootWrapper>
     </S.Container>
+  );
+};
+
+const getRowComponent = (memo, rowName) => {
+  const componentTable = {
+    id: <S.Text>{memo.id}</S.Text>,
+    title: <S.Text>{memo.title}</S.Text>,
+    tags: <TagBadgeBar tags={memo.tags} />,
+    text: <CKEditor editor={ClassicEditor} data={memo.text} disabled='true' />,
+  };
+
+  return (
+    <S.MemoRow key={`row${rowName}`}>
+      <S.MemoHead>{rowName.toUpperCase()}</S.MemoHead>
+      <S.MemoData>{componentTable[rowName]}</S.MemoData>
+    </S.MemoRow>
   );
 };
 

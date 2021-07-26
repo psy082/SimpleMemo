@@ -17,17 +17,21 @@ const MemoEditor = () => {
     switch (mode) {
       case 'new':
         addMemo();
+        history.push('/list');
+        window.location.reload();
         break;
       case 'edit':
         updateMemo();
+        history.push(`/memo/${memo.id}`);
         break;
       case 'delete':
         deleteMemo();
+        history.push('/list');
+        window.location.reload();
         break;
       default:
         break;
     }
-    history.push('/');
   };
 
   return (
