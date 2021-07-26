@@ -47,7 +47,6 @@ const MemoEditor = () => {
 };
 
 const getRowComponent = (memo, rowName, disabled) => {
-  console.log(memo);
   const componentTable = {
     id: memo.id,
     title: <TitleInput text={memo.title} disabled={disabled} />,

@@ -10,8 +10,6 @@ const BadgeBar = ({ tags, disabled }) => {
     dispatch(setTags(tagName));
   };
 
-  console.log(tags);
-
   return (
     <S.Component>
       {tags.map(tagName => (
