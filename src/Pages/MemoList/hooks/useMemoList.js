@@ -8,10 +8,9 @@ const useMemoList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if ((memoList.length !== 0) && (allTags.length !== 0)) return;
-    dispatch(getMemoListAsync());
-    dispatch(getAllTagsAsync());
     dispatch(setMemo(initialMemo));
+    if (memoList.length === 0) dispatch(getMemoListAsync());
+    if (allTags.length === 0) dispatch(getAllTagsAsync());
   }, [dispatch, memoList.length, allTags.length]);
 
   return { memoList, allTags };

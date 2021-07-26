@@ -12,19 +12,12 @@ import {
 const useMemoEditor = () => {
   const { memo } = useSelector(state => state.memo);
   const location = useLocation();
-  const [_, mode, id] = location.pathname.split('/');
+  const [, mode, id] = location.pathname.split('/');
   const dispatch = useDispatch();
 
   useEffect(() => {
     if ('new' === mode) {
-      dispatch(
-        setMemo({
-          id: 0,
-          title: '',
-          tags: [],
-          text: '',
-        })
-      );
+      dispatch(setMemo(initialMemo));
     } else {
       dispatch(getMemoAsync(+id));
     }
@@ -43,6 +36,13 @@ const useMemoEditor = () => {
   };
 
   return { mode, memo, addMemo, updateMemo, deleteMemo };
+};
+
+const initialMemo = {
+  id: 0,
+  title: '',
+  tags: [],
+  text: '',
 };
 
 export default useMemoEditor;

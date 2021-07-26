@@ -11,8 +11,6 @@ const MemoDetail = () => {
   const { memo, id } = useMemoDetail();
   const history = useHistory();
 
-  console.log(memo);
-
   const toList = () => {
     history.push('/');
   };
