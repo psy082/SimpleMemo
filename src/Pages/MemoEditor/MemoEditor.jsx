@@ -43,8 +43,8 @@ const MemoEditor = () => {
         </S.EditorBody>
       </S.Editor>
       <S.FootWrapper>
-        <ActionButton src={returnSVG} onClick={goBack} />
-        <ActionButton src={checkSVG} onClick={commit} />
+        <ActionButton src={returnSVG} desc='return' onClick={goBack} />
+        <ActionButton src={checkSVG} desc='commit' onClick={commit} />
       </S.FootWrapper>
     </S.Container>
   );

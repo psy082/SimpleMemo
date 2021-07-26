@@ -35,8 +35,8 @@ const MemoDetail = () => {
         <S.MemoBody>{rowNames.map(rowName => getRowComponent(memo, rowName))}</S.MemoBody>
       </S.Memo>
       <S.FootWrapper>
-        <ActionButton src={deleteSVG} onClick={() => deleteMemo(id)} />
-        <ActionButton src={editSVG} onClick={() => editMemo(id)} />
+        <ActionButton src={deleteSVG} desc='delete' onClick={() => deleteMemo(id)} />
+        <ActionButton src={editSVG} desc='edit' onClick={() => editMemo(id)} />
       </S.FootWrapper>
     </S.Container>
   );

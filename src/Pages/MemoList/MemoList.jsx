@@ -18,7 +18,7 @@ const MemoList = () => {
     <S.Container>
       <S.AppTitle>Simple Memo</S.AppTitle>
       <S.ButtonWrapper to='/new'>
-        <S.AddButton src={plusSVG} />
+        <S.AddButton alt='backward' src={plusSVG} />
       </S.ButtonWrapper>
       <TagBadgeBar tags={allTags} />
       <S.MemoListTable>
