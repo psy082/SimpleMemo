@@ -2,6 +2,29 @@
 
 ## Setup
 
+아래의 명령어로 레포지토리 클론 및 라이브러리 설치가 가능하다:
+
+```
+git clone https://github.com/psy082/SimpleMemo.git
+cd SimpleMemo
+yarn install
+```
+
+설치 후에 Simple Memo App을 develop 환경에서 빌드 및 실행하기 위해서 아래의 명령어를 사용한다.
+
+```
+yarn start
+```
+
+## 메모 생성 시 가이드
+
+<div style="display: flex">
+  <img width="50%" src="public/assets/tag_guide1.png">
+  <img width="50%" src="public/assets/tag_guide2.png">
+</div>
+
+메모에서 tag 생성 시 input에 tag 입력 후 ;(semicolon)을 입력해야 tag로 생성이 된다.생성된 tag를 지우고 싶다면 태그 뱃지에 있는 x를 클릭하면 해당 tag가 삭제된다.
+
 ## Page Requirements
 
 ### 메모 목록 화면
