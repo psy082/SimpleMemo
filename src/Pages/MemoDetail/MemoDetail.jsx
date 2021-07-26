@@ -15,6 +15,7 @@ const MemoDetail = () => {
 
   const toList = () => {
     history.push('/');
+    window.location.reload();
   };
 
   const editMemo = id => {
