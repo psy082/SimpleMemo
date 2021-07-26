@@ -37,6 +37,14 @@ export const MemoHead = styled.th`
 
 export const MemoData = styled.td`
   width: 80%;
+
+  & .ck-editor__top {
+    display: none;
+  }
+  & .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+    border: none;
+    background: #f5f5f5;
+  }
 `;
 
 export const Text = styled.div`
