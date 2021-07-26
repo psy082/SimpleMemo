@@ -1,4 +1,5 @@
 import * as S from './MemoList.styles';
+import { useHistory } from 'react-router';
 import { useMemoList } from './hooks';
 import { TagBadgeBar } from '../../Common/Components';
 import { MemoItem } from './Components';
@@ -13,12 +14,17 @@ const tableHeads = [
 
 const MemoList = () => {
   const { memoList, allTags } = useMemoList();
+  const history = useHistory();
+
+  const toAddMemo = () => {
+    history.push('/new');
+  };
 
   return (
     <S.Container>
       <S.AppTitle>Simple Memo</S.AppTitle>
-      <S.ButtonWrapper to='/new'>
-        <S.AddButton alt='backward' src={plusSVG} />
+      <S.ButtonWrapper>
+        <S.AddButton alt='backward' src={plusSVG} onClick={toAddMemo} />
       </S.ButtonWrapper>
       <TagBadgeBar tags={allTags} />
       <S.MemoListTable>

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div``;
 
@@ -10,7 +9,7 @@ export const AppTitle = styled.h1`
   font-weight: 200;
 `;
 
-export const ButtonWrapper = styled(Link)`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
