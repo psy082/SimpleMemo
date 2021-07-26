@@ -32,10 +32,15 @@ export const MemoRow = styled.tr`
 
 export const MemoHead = styled.th`
   width: 20%;
+  border-right: 2px solid #70502667;
 `;
 
 export const MemoData = styled.td`
   width: 80%;
+`;
+
+export const Text = styled.div`
+  padding: 0 9px;
 `;
 
 export const FootWrapper = styled.div`
