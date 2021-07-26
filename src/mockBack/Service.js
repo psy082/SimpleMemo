@@ -55,9 +55,10 @@ export const memoService = {
 
   addMemo: (title, tags, text) => {
     let memoList = JSON.parse(localStorage.getItem(MEMO_LIST));
+    memoList = memoList ? memoList : [];
 
     let newId;
-    if (memoList === null) {
+    if (memoList.length === 0) {
       memoList = [];
       newId = 1;
     } else {
