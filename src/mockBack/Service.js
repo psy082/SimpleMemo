@@ -26,7 +26,6 @@ export const memoService = {
   getAllTags: () => {
     let memoList = localStorage.getItem(MEMO_LIST);
     memoList = memoList ? JSON.parse(memoList) : [];
-    console.log(memoList);
 
     let allTags = [
       ...memoList.reduce((acc, { tags }) => {
