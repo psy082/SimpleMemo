@@ -43,8 +43,8 @@ const MemoDetail = () => {
 
 const getRowComponent = (memo, rowName) => {
   const componentTable = {
-    id: memo.id,
-    title: memo.title,
+    id: <S.Text>{memo.id}</S.Text>,
+    title: <S.Text>{memo.title}</S.Text>,
     tags: <TagBadgeBar tags={memo.tags} />,
     text: <CKEditor editor={ClassicEditor} data={memo.text} disabled='true' />,
   };
