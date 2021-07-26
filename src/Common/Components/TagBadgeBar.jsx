@@ -6,13 +6,11 @@ const TagBadgeBar = ({ tags }) => {
   const { selectedTags, onClick } = useTags();
 
   return (
-    !!tags.length && (
-      <S.BadgeBarComponent>
-        {tags.map(tagName => (
-          <TagBadge key={`All${tagName}`} name={tagName} selected={selectedTags.includes(tagName)} onClick={onClick} />
-        ))}
-      </S.BadgeBarComponent>
-    )
+    <S.BadgeBarComponent>
+      {tags.map(tagName => (
+        <TagBadge key={`All${tagName}`} name={tagName} selected={selectedTags.includes(tagName)} onClick={onClick} />
+      ))}
+    </S.BadgeBarComponent>
   );
 };
 
